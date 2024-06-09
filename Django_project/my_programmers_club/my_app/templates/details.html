@@ -1,0 +1,38 @@
+{% extends "navbar.html" %}
+
+{% block title %}
+Details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-lg-6 text-align-right">
+                <img class="card-img-top w-75" src="{{myuser.user_image.url}}" alt="Card image cap">
+            </div>
+            <div class="col-12 col-sm-6 col-lg-6 margin-atuo text-align-center ">
+                <div class="card-body">
+                    <h5 class="card-title">Firstname: {{myuser.firstname}}</h5>
+                    <h5 class="card-title">Lastname: {{myuser.lastname}}</h5>
+                    <h5 class="card-title">Phone: {{myuser.phone}}</h5>
+                    <h5 class="card-title">Joined Date: {{myuser.joined_date}}</h5>
+                    <h5 class="card-title">Age: {{myuser.age}}</h5>
+                    {% if myuser.married == 1 %}
+                    <h5 class="card-title">Married: Yes</h5>
+                    {% else %}
+                    <h5 class="card-title">Married: No</h5>
+                    {% endif %}
+                    <a href="{% url 'update_member' slug=myuser.slug %}" class="btn btn-primary text-white">Update Member</a><br>
+                    <!-- Form for deletion -->
+                    <form method="post" action="{% url 'delete_member' slug=myuser.slug %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger mt-2">Delete Member</button>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

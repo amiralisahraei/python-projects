@@ -1,0 +1,31 @@
+{% extends "navbar.html" %}
+
+{% block title %}
+Users
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row text-center justify-content-center">
+            <div class="col-4 mt-5">
+                {% if messages %}
+                    <div class="alert alert-success" role="alert">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                    </div>
+                {% endif %}
+                <ul class="list-group mt-5">
+                    <li class="list-group-item bg-success text-white"><h1>Members</h1></li>
+                    {% for user in myusers %}
+                        <a href="details/{{user.slug}}" class="list-group-item btn btn-primary text-decoration-none fw-bold">{{user.firstname}} {{user.lastname}}</a>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %} 

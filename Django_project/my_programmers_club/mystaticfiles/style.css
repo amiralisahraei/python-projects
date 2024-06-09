@@ -1,0 +1,46 @@
+
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    overflow: hidden;
+    font-family: 'monica-ext-font_YIBBBFG' !important;
+}
+
+main {
+    background-color: rgb(233 233 233) !important;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none !important;
+    color: unset !important
+}
+
+a:hover {
+    color: white !important
+}
+
+.nav-link:hover {
+    color: #198754 !important;
+    font-weight: bold !important;
+}
+
+.text-align-right {
+    text-align: right !important;
+}
+
+.margin-atuo {
+    margin: auto !important;
+}
+
+@media screen and (max-width: 991px) {
+
+    .text-align-right, .text-align-center {
+        text-align: center !important;
+    }
+}
