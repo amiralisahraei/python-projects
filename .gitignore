@@ -13,6 +13,12 @@ media
 venv_*/
 my_machine_learning
 
+__init__.py
+middlewares.py
+pipelines.py
+settings.py
+scrapy.cfg
+
 venv_*/
 Mnist/
 *.pth
